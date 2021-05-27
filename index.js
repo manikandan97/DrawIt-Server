@@ -14,6 +14,15 @@ io.on('connection', client => {
    client.on('colourChange', data =>{
     io.emit('changeColour', data)
    })
+
+   client.on('brushChange', data =>{
+    io.emit('changeBrush', data)
+   })
+
+   client.on('paintClear', data =>{
+    io.emit('changePaint', data)
+   })
+
   client.on('disconnect', () => {
     
   });
